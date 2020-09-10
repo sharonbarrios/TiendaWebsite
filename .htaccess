@@ -1,0 +1,10 @@
+<ifModule mod_rewrite.c>
+
+RewriteEngine on
+ErrorDocument 404 http://localhost/TiendaOnline/error/
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^(.*)/(.*) index.php?controlador=$1&action=$2
+</ifModule>
